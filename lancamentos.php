@@ -6,6 +6,7 @@ include 'conexao.php';
     <head>
 <meta charset="UTF-8">
 <title>Cadastro de Despesas</title>
+<link rel="stylesheet" href= "css/estilo.css">
 </head>
 <body>
     <a href="index.php"><button>voltar</button></a>
@@ -58,7 +59,7 @@ if (isset($_POST['submit'])) {
         <th>Fixa</th>
 </tr>
 <?php
-$sql = "SELECT descrição, valor, tipo, data, fixa FROM lançamentos WHERE tipo = 'saida'";
+$sql = "SELECT descrição, valor, tipo, data, fixa FROM lançamentos ";
   foreach($conn->query($sql) as $row) {
     echo "<tr>
     <td>{$row['descrição']}</td>

@@ -7,6 +7,7 @@ echo "Bem-vindo ao Sistema de Controle Financeiro!";
 <head> 
     <meta charset="UTF-8"> 
     <title>Controle Financeiro Pessoal</title> 
+    <link rel="stylesheet" href= "css/estilo.css">
 </head> 
 <body>
     <h1>Controle Financeiro Pessoal</h1>
