@@ -1,6 +1,6 @@
 <?php
 include 'conexao.php';
-echo "Bem-vindo ao Sistema de Controle Financeiro!";
+
 ?>
 <!DOCTYPE html> 
 <html lang="pt-br"> 
@@ -16,7 +16,7 @@ echo "Bem-vindo ao Sistema de Controle Financeiro!";
 include 'conexao.php';
 
 try{
-    $stmt = $conn->query("SELECT *, MONTH(data) as mes, YEAR(data) as ano FROM lançamentos ORDER BY data DESC");
+    $stmt = $conn->query("SELECT *, MONTH(data) as mes, YEAR(data) as ano FROM lançamentos ORDER BY data ASC");
     $lancamentosPorMes = [];
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         $lancamentosPorMes[$row['ano']][$row['mes']][] = $row;
@@ -34,7 +34,7 @@ try{
                     <th>Fixa</th>
                 </tr>";
             foreach($lancamentos as $lancamentos) {
-                echo "<tr>
+                echo "<tr class='{$lancamentos['tipo']}'>
                 <td>{$lancamentos['descrição']}</td>
                 <td>R$ {$lancamentos['valor']}</td>
                 <td>{$lancamentos['tipo']}</td>

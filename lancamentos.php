@@ -61,7 +61,7 @@ if (isset($_POST['submit'])) {
 <?php
 $sql = "SELECT descrição, valor, tipo, data, fixa FROM lançamentos ";
   foreach($conn->query($sql) as $row) {
-    echo "<tr>
+    echo "<tr class='{$row['tipo']}'>
     <td>{$row['descrição']}</td>
     <td>R$ {$row['valor']}</td>
     <td>{$row['tipo']}</td> 

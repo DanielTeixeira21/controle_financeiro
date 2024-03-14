@@ -20,11 +20,11 @@ th {
     backgroud-color: #f2f2f2;
 }
 tr:hover {
-    background-color: #e9e9e9;
+    background-color: #000000;
 
 }
 button {
-    background-color: #007bff;
+    background-color: #9900ff;
     color: white;
     padding: 10px 15px;
     border: nome;
@@ -78,4 +78,14 @@ thead th {
     top: 0;
     background-color: #f2f2f2;
     z-index: 10;
+}
+
+.saida {
+    background-color: red;
+    color: white;
+}
+
+.entrada {
+    background-color: blue;
+    color: white
 }
