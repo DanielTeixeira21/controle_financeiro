@@ -40,6 +40,17 @@ try{
                 <td>{$lancamentos['tipo']}</td>
                 <td>" . date("d/m/Y", strtotime($lancamentos['data'])) . "</td>
                 <td>{$lancamentos['fixa']}</td>
+                <td>
+                <form action='delete.php' method='post'>
+                    <input type='hidden' nome='id' value='{$lancamentos['id']}'>
+                    <button type='submit' name='delete'>Excluir</button>
+                    </form>
+                    </td>
+                    <td>
+                    <form action= 'editar.php' method='post'>
+                    <input type='hidden' name='id' value={'$lacamentos['id']}'>
+
+
               </tr>";
            
             }
