@@ -2,7 +2,6 @@
 include 'conexao.php';
 if (isset($_POST['delete'])) {
     $id= $_POST['id'];
-
     try {
         $sql = "DELETE FROM lançamentos WHERE id = ?";
         $stmt = $conn->prepare($sql);
