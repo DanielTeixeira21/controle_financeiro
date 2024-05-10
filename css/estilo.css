@@ -25,7 +25,7 @@ tr:hover {
 
 }
 button {
-    background-color: #9900ff;
+    background-color: #fdca40;
     color: white;
     padding: 10px 15px;
     border: nome;
@@ -33,7 +33,7 @@ button {
     cursor: pointer; 
 }
 button:hover {
-    background-color: #0056b3;bv
+    background-color: #0056b3;
 }
 .form {
     background-color: #ffffff;
@@ -82,11 +82,11 @@ thead th {
 }
 
 .saida {
-    background-color: red;
+    background-color: #df2935;
     color: white;
 }
 
 .entrada {
-    background-color: blue;
+    background-color: #3772ff;
     color: white
 }

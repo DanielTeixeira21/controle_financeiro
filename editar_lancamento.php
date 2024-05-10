@@ -52,8 +52,8 @@ if (isset($_POST['fixa'])) {
     Data: . <input type="date" value="<?php echo $lancamento['data']?>"name= "data" ><br><br>
     <label>Tipo:<label>
     <select name= "tipo">
-        <option value="Entrada" <?php echo $lancamento ['tipo'] == 'entrada' ? 'selected' : '' ?>>Entrada</option>
-        <option value= "Saida" <?php echo $lancamento ['tipo'] == 'saida' ? 'selected' : '' ?>>Saida</option>
+        <option value="entrada" <?php echo $lancamento ['tipo'] == 'entrada' ? 'selected' : '' ?>>entrada</option>
+        <option value= "saida" <?php echo $lancamento ['tipo'] == 'saida' ? 'selected' : '' ?>>saida</option>
     </select>
 <br></br>
 
