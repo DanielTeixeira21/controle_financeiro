@@ -1,3 +1,6 @@
+body {
+    font-family: arial;
+}
 a {
     color: #007bff;
     text-decoration: nome;
@@ -81,12 +84,29 @@ thead th {
     z-index: 10;
 }
 
-.saida {
-    background-color: #df2935;
-    color: white;
+.botao {
+    text-decoration: none;
+    padding: 2px 5px 2px 5px;
+    border-radius: 10px;
+    color: #fff;
 }
 
 .entrada {
-    background-color: #3772ff;
-    color: white
+    background-color: #29bf12;
+    color: white; 
+    cursor: pointer;
+}
+
+.saida{
+   background-color:#f21b3f; 
+   color: white;
+}
+.alerta {
+    background-color: #DC8686;
+    
+}
+
+.sucesso {
+    background-color: #7ED7C1;
+    
 }

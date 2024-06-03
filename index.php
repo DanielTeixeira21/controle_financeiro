@@ -1,7 +1,30 @@
 <?php
 include 'conexao.php';
 
+// Verificar se o usuário está autenticado
+if (!isset($_SESSION['usuario'])) {
+    // Usuário não autenticaqdo, redirecionar para a página de login
+    header("Location: login.php");
+    exit();
+}
+// Página protegida
+echo "Bem-vindo," . $_SESSION['usuario'];
+
+if (isset($_POST['delete'])) {
+    $id= $_POST['id'];
+    try {
+        $sql = "DELETE FROM lançamentos WHERE id = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([$id]);
+        header("Location: index.php");
+        exit();
+    } catch (PDOException $e) {
+        echo "Erro ao excluir lançamentos:" . $e->getMessage();
+    }
+} 
 ?>
+
+
 <!DOCTYPE html> 
 <html lang="pt-br"> 
 <head> 
@@ -12,6 +35,7 @@ include 'conexao.php';
 <body>
     <h1>Controle Financeiro Pessoal</h1>
     <a href="lancamentos.php"><button>Acessar Lancamentos</button></a>
+    <a href="logout.php"><button class="saida">Sair</button></a>
 <?php
 include 'conexao.php';
 
@@ -41,16 +65,11 @@ try{
                 <td>" . date("d/m/Y", strtotime($lancamentos['data'])) . "</td>
                 <td>{$lancamentos['fixa']}</td>
                 <td>
-                    <form action='delete.php' method='post'>
-                        <input type='hidden' name='id' value='{$lancamentos['id']}'>
-                        <button type='submit' name='delete'>Excluir</button>
-                    </form>
-                </td>
-                <td>
-                    <form action='editar.php' method='post'>
-                        <input type='hidden' name='id' value='{$lancamentos['id']}'>
-                        <button type='submit' name='edit'>Editar</button>                
-                    </form>
+<a href='delete.php?id={$lancamentos['id']}' class='botao alerta'> Excluir</a>
+<a href='delete.php?id={$lancamentos['id']}' class='botao sucesso'> Editar</a>
+                    
+               
+                    
         
                 </td>
               </tr>";

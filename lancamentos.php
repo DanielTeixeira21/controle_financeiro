@@ -1,6 +1,33 @@
 <?php
+
 include 'conexao.php';
+
+
+session_start();
+// Verificar se o usuário está autenticado
+if (!isset($_SESSION['usuario'])) {
+    // Usuário não autenticaqdo, redirecionar para a página de login
+    header("Location: login.php");
+    exit();
+}
+// Página protegida
+echo "Bem-vindo," . $_SESSION['usuario'];
+
+
+if (isset($_POST['delete'])) {
+    $id= $_POST['id'];
+    try {
+        $sql = "DELETE FROM lançamentos WHERE id = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([$id]);
+        header("Location: index.php");
+        exit();
+    } catch (PDOException $e) {
+        echo "Erro ao excluir lançamentos:" . $e->getMessage();
+    }
+} 
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -10,6 +37,7 @@ include 'conexao.php';
 </head>
 <body>
     <a href="index.php"><button>voltar</button></a>
+    
     <h2>lançamentos</h2>
 
     <h2>Cadastro de Despesas</h2>
