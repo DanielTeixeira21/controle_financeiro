@@ -1,5 +1,6 @@
 body {
     font-family: arial;
+    
 }
 a {
     color: #007bff;
@@ -44,12 +45,12 @@ button:hover {
     border-radius: 8px;
     box-shadow: 0 2px 4px igba (0,0,0,0.1);
 }
-input[type=text], input[type=number], input[tupe=date], select {
+input[type=text], input[type=password], input[type=number], input[tupe=date], select {
     width: 100%;
     padding: 8px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #ccc;
+    border: 1px solid #cccccc;
     border-radius: 4px;
     box-sizing: border-box;
 }
