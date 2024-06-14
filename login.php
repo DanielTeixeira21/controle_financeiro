@@ -46,7 +46,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="text" id="usuaario" name="usuario" required><br><br>
         <label for="senha">senha:</label>
         <input type="password" id="senha" name="senha" required><br><br>
-        <button type="submit">Login</button>
+        <button type="submit">Login</button> 
+        <br>
+        <a href=cadastro.php>Criar conta</a>
+        <br>
+        
+    
 </form>
 
 
